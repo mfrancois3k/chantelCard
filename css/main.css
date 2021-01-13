@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+
+.card {
+    position: relative; 
+    width: 800px;
+    height: 400px;
+    transform-style: preserve-3d; 
+    /* // parent div  // parent relavtive*/
+
+}
+
+.card .face {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 2s ease-in-out; 
+     /* // child div   */
+}
+
+.card .face.front {
+    /* background: #ff0; */
+    
+}
+
+.card:hover .face.front {
+    transform: perspective(500px) rotateY(180deg);
+    }
+
+.card .face.back {
+    background: #3bc2ff;
+    color: #fff;
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.card:hover .face.back {
+    transform: perspective(500px) rotateY(360deg);
+    }
+
+.card .face h2 {
+    font-size: 4em;
+    text-transform: uppercase;
+    transform: perspective(500px) translateZ(50px);
+}
+
+
+/* buiness card */
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main{
+    width: 800px;
+    height: 400px;
+    
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    margin-top: -400px;
+    margin-left: -100px;
+    transform: translate(50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+}
+
+.main {
+
+}
+section{
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    animation: animate 0.8s  cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.7s;
+    opacity: 0;
+}
+
+section:nth-child(1){
+    background-color: #CDF6FF;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    line-height: 2.2rem;
+    transition: all 0.3s;
+    animation: animate 0.8s  cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+h3{
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    line-height: 2.1rem;
+    margin-left: 55px;
+    margin-bottom: 15px;
+    color: rgb(155, 155, 155);
+    letter-spacing: 2px;
+    font-style: italic;
+    transition: all 0.3s;
+    animation: animate 0.8s  cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+p{
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 55px; 
+    line-height: 1.5rem;
+    padding: 5px 5px;
+    transition: all 0.3s;
+    animation: animate 0.8s  cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    
+}
+h1, h2 {
+    margin-right: 2px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.number {
+  margin-right: -35px;
+  padding-left: 30%;
+  letter-spacing: 2px;  
+  padding-top: 10%;
+}
+p:nth-last-child(1){
+    margin-left: 25px;
+}
+
+ .two {
+    margin-top: -2%;
+}
+
+
+img {
+    width: 80%;
+    height: 80%;    
+    max-width: 600px;
+    margin-left: 25px;
+}
+
+h1:hover,
+h3:hover,
+p:hover,
+img:hover {
+    box-shadow: -2px 4px 4px -4px #000000;
+    border-radius: 20px;
+
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(400px) rotateY(-30deg);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY() rotateY();
+        opacity: 1;
+    }
+}
